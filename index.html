@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>This is Heading</h2>
+</body>
+<script>
+//     new Promise((resolveOuter) => {
+//   resolveOuter(
+//     new Promise((resolveInner) => {
+//       setTimeout(resolveInner, 1000);
+//     }),
+//   );
+// });
+
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("foo");
+  }, 300);
+});
+
+myPromise
+  .then(handleFulfilledA, handleRejectedA)
+  .then(handleFulfilledB, handleRejectedB)
+  .then(handleFulfilledC, handleRejectedC);
+</script>
+</html>
